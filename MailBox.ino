@@ -65,7 +65,7 @@ void setup(){
   ResetDiodes(); 
   //Read the pins without any IR signal
   //if at least one pin detects a signal assume somethings wrong
-  for(int IRPin=2; IRPin<7; IRPin++) {
+  for(int IRPin=2; IRPin<7 && TotalResult > 0; IRPin++) {
     if (GetIRData(IRPin) > 10) { 
       TotalResult = 0;
     }
